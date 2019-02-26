@@ -11,6 +11,7 @@
 		2B9D9C7F2224D27200B735ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9D9C7E2224D27200B735ED /* Assets.xcassets */; };
 		2B9D9C822224D27200B735ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9D9C802224D27200B735ED /* LaunchScreen.storyboard */; };
 		2B9D9C8A2224D35500B735ED /* CryptoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9C892224D35500B735ED /* CryptoTableViewController.swift */; };
+		2B9D9C8C2224D6D100B735ED /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9C8B2224D6D100B735ED /* CoinData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		2B9D9C812224D27200B735ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B9D9C832224D27200B735ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B9D9C892224D35500B735ED /* CryptoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewController.swift; sourceTree = "<group>"; };
+		2B9D9C8B2224D6D100B735ED /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				2B9D9C7E2224D27200B735ED /* Assets.xcassets */,
 				2B9D9C802224D27200B735ED /* LaunchScreen.storyboard */,
 				2B9D9C832224D27200B735ED /* Info.plist */,
+				2B9D9C8B2224D6D100B735ED /* CoinData.swift */,
 			);
 			path = CryptoTracker;
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B9D9C8C2224D6D100B735ED /* CoinData.swift in Sources */,
 				2B9D9C8A2224D35500B735ED /* CryptoTableViewController.swift in Sources */,
 				2B9D9C782224D27000B735ED /* AppDelegate.swift in Sources */,
 			);
