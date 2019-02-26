@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window  = UIWindow(frame: UIScreen.main.bounds)
         let cryptoTableVC = CryptoTableViewController()
-        window?.rootViewController = cryptoTableVC
+        let navController = UINavigationController(rootViewController: cryptoTableVC)
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
         return true
