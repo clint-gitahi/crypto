@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2B9D9C782224D27000B735ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9C772224D27000B735ED /* AppDelegate.swift */; };
-		2B9D9C7A2224D27000B735ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9C792224D27000B735ED /* ViewController.swift */; };
-		2B9D9C7D2224D27000B735ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9D9C7B2224D27000B735ED /* Main.storyboard */; };
 		2B9D9C7F2224D27200B735ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9D9C7E2224D27200B735ED /* Assets.xcassets */; };
 		2B9D9C822224D27200B735ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9D9C802224D27200B735ED /* LaunchScreen.storyboard */; };
+		2B9D9C8A2224D35500B735ED /* CryptoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9D9C892224D35500B735ED /* CryptoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B9D9C742224D27000B735ED /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9D9C772224D27000B735ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B9D9C792224D27000B735ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2B9D9C7C2224D27000B735ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B9D9C7E2224D27200B735ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B9D9C812224D27200B735ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B9D9C832224D27200B735ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B9D9C892224D35500B735ED /* CryptoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				2B9D9C772224D27000B735ED /* AppDelegate.swift */,
-				2B9D9C792224D27000B735ED /* ViewController.swift */,
-				2B9D9C7B2224D27000B735ED /* Main.storyboard */,
+				2B9D9C892224D35500B735ED /* CryptoTableViewController.swift */,
 				2B9D9C7E2224D27200B735ED /* Assets.xcassets */,
 				2B9D9C802224D27200B735ED /* LaunchScreen.storyboard */,
 				2B9D9C832224D27200B735ED /* Info.plist */,
@@ -124,7 +121,6 @@
 			files = (
 				2B9D9C822224D27200B735ED /* LaunchScreen.storyboard in Resources */,
 				2B9D9C7F2224D27200B735ED /* Assets.xcassets in Resources */,
-				2B9D9C7D2224D27000B735ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B9D9C7A2224D27000B735ED /* ViewController.swift in Sources */,
+				2B9D9C8A2224D35500B735ED /* CryptoTableViewController.swift in Sources */,
 				2B9D9C782224D27000B735ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +139,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2B9D9C7B2224D27000B735ED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2B9D9C7C2224D27000B735ED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2B9D9C802224D27200B735ED /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
