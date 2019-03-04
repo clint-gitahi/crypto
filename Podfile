@@ -6,5 +6,5 @@ target 'CryptoTracker' do
 
   # Pods for CryptoTracker
 pod "Alamofire", "4.7.2"
-
+pod "SwiftChart", "1.0.1"
 end

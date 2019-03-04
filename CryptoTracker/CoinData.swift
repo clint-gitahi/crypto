@@ -45,6 +45,7 @@ class CoinData {
 
 @objc protocol CoinDataDelegate : class {
     @objc optional func newPrices()
+    @objc optional func newHistory()
 }
 
 class Coin {
@@ -73,6 +74,24 @@ class Coin {
             return fancyPrice
         } else {
             return "Error"
+        }
+    }
+    
+    func getHistoricalData() {
+        Alamofire.request("https://min-api.cryptocompare.com/data/histoday?fsym=\(symbol)&tsym=USD&limit=30").responseJSON { (response)
+            in
+            if let json = response.result.value as? [String: Any] {
+                if let pricesJSON = json["Data"] as? [[String: Double]] {
+                    self.historicalData = []
+                    for priceJSON in pricesJSON {
+                        if let closePrice = priceJSON["close"] {
+                            self.historicalData.append(closePrice)
+                        }
+                    }
+                    
+                    CoinData.shared.delegate?.newHistory?()
+                }
+            }
         }
     }
 }
