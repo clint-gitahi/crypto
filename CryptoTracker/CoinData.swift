@@ -98,4 +98,8 @@ class Coin {
             }
         }
     }
+    
+    func amountAsString() -> String {
+        return CoinData.shared.doubleToMoneyString(double: amount * price)
+    }
 }
