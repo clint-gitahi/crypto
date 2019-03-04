@@ -41,6 +41,17 @@ class CoinData {
             }
         }
     }
+    
+    func doubleToMoneyString(double: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.numberStyle = .currency
+        if let fancyPrice = formatter.string(from: NSNumber(floatLiteral: double)) {
+            return fancyPrice
+        } else {
+            return "Error"
+        }
+    }
 }
 
 @objc protocol CoinDataDelegate : class {
@@ -67,14 +78,7 @@ class Coin {
             return "Loading..."
         }
         
-        let formatter = NumberFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.numberStyle = .currency
-        if let fancyPrice = formatter.string(from: NSNumber(floatLiteral: price)) {
-            return fancyPrice
-        } else {
-            return "Error"
-        }
+        return CoinData.shared.doubleToMoneyString(double: price)
     }
     
     func getHistoricalData() {
