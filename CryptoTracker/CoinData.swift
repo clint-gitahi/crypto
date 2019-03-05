@@ -96,6 +96,13 @@ class Coin {
         if let image = UIImage(named: symbol) {
             self.image = image
         }
+        
+        self.price = UserDefaults.standard.double(forKey: symbol)
+        self.amount = UserDefaults.standard.double(forKey: symbol + "amount")
+        
+        if let history = UserDefaults.standard.array(forKey: symbol + "history") as? [Double] {
+            self.historicalData = history
+        }
     }
     
     func priceAsString() -> String {
