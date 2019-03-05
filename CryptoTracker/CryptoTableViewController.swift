@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 private let headerHeight : CGFloat = 100.0
 private let netWorthHeight : CGFloat = 45.0
@@ -20,6 +21,29 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
         super.viewDidLoad()
         
         CoinData.shared.getPrices()
+        
+        // checking whether a device has touchID or faceID
+        if LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            updateSecureButton()
+        }
+    }
+    
+    func updateSecureButton() {
+        if UserDefaults.standard.bool(forKey: "secure") {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Unsecure App", style: .plain, target: self, action: #selector(secureTapped))
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Secure App", style: .plain, target: self, action: #selector(secureTapped))
+        }
+    }
+    
+    @objc func secureTapped() {
+        if UserDefaults.standard.bool(forKey: "secure") {
+            UserDefaults.standard.set(false, forKey: "secure")
+        } else {
+            UserDefaults.standard.set(true, forKey: "secure")
+        }
+        
+        updateSecureButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
