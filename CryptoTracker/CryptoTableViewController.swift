@@ -22,10 +22,33 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
         
         CoinData.shared.getPrices()
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Report", style: .plain, target: self, action: #selector(reportTapped))
+        
         // checking whether a device has touchID or faceID
         if LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             updateSecureButton()
         }
+    }
+    
+    @objc func reportTapped() {
+        let formatter = UIMarkupTextPrintFormatter(markupText: CoinData.shared.html())
+        
+        let render = UIPrintPageRenderer()
+        render.addPrintFormatter(formatter, startingAtPageAt: 0)
+        let page = CGRect(x: 0, y: 0, width: 595.2, height: 841.8)
+        render.setValue(page, forKey: "paperRect")
+        render.setValue(page, forKey: "printableRect")
+        let pdfData = NSMutableData()
+        UIGraphicsBeginPDFContextToData(pdfData, .zero, nil)
+        
+        for i in 0..<render.numberOfPages {
+            UIGraphicsBeginPDFPage()
+            render.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+        }
+        
+        UIGraphicsEndPDFContext()
+        let shareVC = UIActivityViewController(activityItems: [pdfData], applicationActivities: nil)
+        present(shareVC, animated: true, completion: nil)
     }
     
     func updateSecureButton() {
